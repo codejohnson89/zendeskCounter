@@ -18,12 +18,13 @@
     h1 {
         font-size: 84;
         text-align: center;
-        margin: 100px;
+        margin-top: 100px;
     }
     
     h3,
     h1 {
         font-family: 'Diplomata SC', cursive;
+        margin-bottom: 10px;
     }
     
     p {
@@ -44,26 +45,45 @@
     .odd {
         border-right: none;
     }
+    
+    hr {
+        background-color: #fff;
+    }
+    
+    .long {
+        width: 80%;
+    }
+    
+    .med {
+        width: 65%;
+    }
+    
+    .short {
+        width: 50%;
+    }
 </style>
 
 <body>
     <div class="heading">
         <h1>Design Reference Dates</h1>
+        <hr class="long">
+        <hr class="med">
+        <hr class="short">
     </div>
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-4 text-center">
-                <h3>Finish Build Before</h3>
+                <h3>Finish Build <br> Before</h3>
                 <p id="build"></p>
             </div>
 
             <div class="col-md-4 text-center">
-                <h3>Send Complete Build</h3>
+                <h3>Send Complete<br> Build</h3>
                 <p id="complete"></p>
             </div>
 
             <div class="col-md-4 text-center odd">
-                <h3>Money Back Date</h3>
+                <h3>Money Back<br> Date</h3>
                 <p id="moneyBack"></p>
             </div>
         </div>
@@ -73,6 +93,70 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
     <script src="main.js"></script>
+    <!--
+        Production will not contain a seperate file to use for JS
+        
+        <script>
+        Date.prototype.addDays = function(days) {
+            var maxDays = new Date(this.valueOf());
+            maxDays.setDate(maxDays.getDate() + days);
+            return maxDays;
+        }
+
+
+        var maxDays = new Date();
+        var j = $("#build");
+        var i = $("#complete");
+
+        switch (maxDays.getDay()) {
+            case 0:
+                i.append(maxDays.addDays(4).toDateString());
+                break;
+            case 1:
+                i.append(maxDays.addDays(4).toDateString());
+                break;
+            case 2:
+                i.append(maxDays.addDays(6).toDateString());;
+                break;
+            case 3:
+                i.append(maxDays.addDays(6).toDateString());
+                break;
+            case 4:
+                i.append(maxDays.addDays(6).toDateString());
+                break;
+            case 5:
+                i.append(maxDays.addDays(6).toDateString());
+                break;
+            case 6:
+                i.append(maxDays.addDays(5).toDateString());
+        }
+
+        switch (maxDays.getDay()) {
+            case 0:
+                j.append(maxDays.addDays(9).toDateString());
+                break;
+            case 1:
+                j.append(maxDays.addDays(9).toDateString());
+                break;
+            case 2:
+                j.append(maxDays.addDays(9).toDateString());;
+                break;
+            case 3:
+                j.append(maxDays.addDays(9).toDateString());
+                break;
+            case 4:
+                j.append(maxDays.addDays(11).toDateString());
+                break;
+            case 5:
+                j.append(maxDays.addDays(11).toDateString());
+                break;
+            case 6:
+                j.append(maxDays.addDays(10).toDateString());
+        }
+
+        $("#moneyBack").append(maxDays.addDays(100).toDateString());
+    </script> -->
+
 </body>
 
 </html>
